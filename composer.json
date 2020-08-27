@@ -1,0 +1,13 @@
+{
+    "name": "dicarlosystems/timestamp-humanizer",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christopher Di Carlo",
+            "email": "chris@dicarlosystems.ca"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
