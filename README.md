@@ -30,5 +30,5 @@ class Foobar
 
 ## Usage
 
-To get the human-readable attribute, simply retrieve the timestamp normally but append *_for_humans* to the name, e.g. created_at_for_humans, updated_at_for_humans.
+To get the human-readable attribute, simply retrieve the timestamp normally but append **_for_humans** to the name, e.g. created_at_for_humans, updated_at_for_humans.
 
