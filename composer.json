@@ -9,5 +9,10 @@
         }
     ],
     "minimum-stability": "dev",
+    "autoload": {
+	    "psr-4": {
+		    "DiCarloSystems\TimestampHumanizer": "src"
+	    }
+    },
     "require": {}
 }
