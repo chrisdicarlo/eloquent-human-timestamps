@@ -1,10 +1,10 @@
 <?php
 
-namespace DiCarloSystems\TimestampHumanizer;
+namespace ChrisDiCarlo\EloquentHumanTimestamps;
 
 use Illuminate\Support\Str;
 
-trait TimestampsForHumans
+trait HumanTimestamps
 {
     public function getCreatedAtForHumansAttribute()
     {

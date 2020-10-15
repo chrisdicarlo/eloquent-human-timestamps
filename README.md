@@ -1,4 +1,4 @@
-# Timestamp Humanizer for Laravel
+# Automatic human timestamp properties in Laravel
 
 This package provides a trait you can add to an Eloquent model that will automatically create human-readable timestamp diffs using Carbon.
 
@@ -7,21 +7,21 @@ This package provides a trait you can add to an Eloquent model that will automat
 To install the package run:
 
 ```
-composer require dicarlosystems/timestamp-humanizer
+composer require chrisdicarlo/eloquent-human-timestamps
 ```
 
 ## Setup
 
-Add the DiCarloSystems\TimestampHumanizer\TimestampsForHumans trait to a model that has timestamp columns, e.g.:
+Add the ChrisDiCarlo\EloquentHumanTimestamps\HumanTimestamps trait to a model that has timestamp columns, e.g.:
 
 ```
 
-use DiCarloSystems\TimestampHumanizer\TimestampsForHumans;
+use ChrisDiCarlo\EloquentHumanTimestamps\HumanTimestamps;
 
 class Foobar
 {
   
-    use TimestampsForHumans;
+    use HumanTimestamps;
 
    ...
 
