@@ -2,6 +2,9 @@
 
 This package provides a trait you can add to an Eloquent model that will automatically create human-readable timestamp diffs using Carbon.
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/chrisdicarlo/eloquent-human-timestamps.svg?style=flat-square)](https://packagist.org/packages/chrisdicarlo/eloquent-human-timestamps)
+![](https://github.com/chrisdicarlo/eloquent-human-timestamps/workflows/Run%20Tests/badge.svg?branch=master)
+[![Total Downloads](https://img.shields.io/packagist/dt/chrisdicarlo/eloquent-human-timestamps.svg?style=flat-square)](https://packagist.org/packages/chrisdicarlo/eloquent-human-timestamps)
 ## Installation
 
 To install the package run:
@@ -20,7 +23,7 @@ use ChrisDiCarlo\EloquentHumanTimestamps\HumanTimestamps;
 
 class Foobar
 {
-  
+
     use HumanTimestamps;
 
    ...
@@ -31,4 +34,3 @@ class Foobar
 ## Usage
 
 To get the human-readable attribute, simply retrieve the timestamp normally but append **_for_humans** to the name, e.g. created_at_for_humans, updated_at_for_humans.
-
