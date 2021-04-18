@@ -2,14 +2,16 @@
 
 namespace ChrisDiCarlo\EloquentHumanTimestamps\Test;
 
-class ModelBuilder {
+class ModelBuilder
+{
     private $useTrait;
     private $useSoftDeletes;
     private $useCastsProperty;
     private $useDatesProperty;
     private $castType;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->useTrait = false;
         $this->useSoftDeletes = false;
         $this->useCastsProperty = false;
@@ -33,19 +35,19 @@ class ModelBuilder {
     {
         $def = '';
 
-        if($this->useTrait) {
-            $def .= 'use ChrisDiCarlo\EloquentHumanTimestamps\HumanTimestamps;';
+        if ($this->useTrait) {
+            $def .= "use ChrisDiCarlo\EloquentHumanTimestamps\HumanTimestamps;\n";
         }
 
-        if($this->useSoftDeletes) {
-            $def .= 'use Illuminate\Database\Eloquent\SoftDeletes;';
+        if ($this->useSoftDeletes) {
+            $def .= "use Illuminate\Database\Eloquent\SoftDeletes;\n";
         }
 
-        if($this->useCastsProperty) {
-            $def .= "protected \$casts = ['published_at' => '{$this->castType}'];";
+        if ($this->useCastsProperty) {
+            $def .= "protected \$casts = ['published_at' => '{$this->castType}'];\n";
         }
 
-        if($this->useDatesProperty) {
+        if ($this->useDatesProperty) {
             $def .= 'protected $dates = [\'published_at\'];';
         }
 
