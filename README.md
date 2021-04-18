@@ -4,9 +4,7 @@ This package provides a trait you can add to an Eloquent model that will automat
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/chrisdicarlo/eloquent-human-timestamps.svg?style=flat-square)](https://packagist.org/packages/chrisdicarlo/eloquent-human-timestamps)
 ![Laravel 8 Tests](https://github.com/chrisdicarlo/eloquent-human-timestamps/actions/workflows/run-tests-L8.yml/badge.svg)
-![Laravel 6 & 7 Tests](https://github.com/chrisdicarlo/eloquent-human-timestamps/actions/workflows/run-tests-L7.yml/badge.svg)branch=master)
-
-![](https://github.com/chrisdicarlo/eloquent-human-timestamps/actions/workflows/Run%20Tests%20-%20L6,L7/badge.svg?branch=master)
+![Laravel 6 & 7 Tests](https://github.com/chrisdicarlo/eloquent-human-timestamps/actions/workflows/run-tests-L7.yml/badge.svg)
 [![Total Downloads](https://img.shields.io/packagist/dt/chrisdicarlo/eloquent-human-timestamps.svg?style=flat-square)](https://packagist.org/packages/chrisdicarlo/eloquent-human-timestamps)
 ## Installation
 
