@@ -2,15 +2,21 @@
 
 namespace ChrisDiCarlo\EloquentHumanTimestamps\Test;
 
-class ModelBuilder {
-    private bool $includeTrait;
-    private bool $includeCastsProperty;
-    private bool $includeDatesProperty;
+use Illuminate\Support\Stringable;
 
-    public function __construct(bool $includeTrait = true, bool $includeCastsProperty = true, bool $includeDatesProperty = false) {
-        $this->includeTrait = $includeTrait;
-        $this->includeCastsProperty = $includeCastsProperty;
-        $this->includeDatesProperty = $includeDatesProperty;
+class ModelBuilder {
+    private bool $useTrait;
+    private bool $useSoftDeletes;
+    private bool $useCastsProperty;
+    private bool $useDatesProperty;
+    private string $castType;
+
+    public function __construct() {
+        $this->useTrait = false;
+        $this->useSoftDeletes = false;
+        $this->useCastsProperty = false;
+        $this->useDatesProperty = false;
+        $this->castType = '';
     }
 
     public function build()
@@ -18,27 +24,58 @@ class ModelBuilder {
         $classDef = <<<EOT
             return new class() extends Illuminate\Database\Eloquent\Model
             {
-                {$this->withTrait()}
-                {$this->withCastsProperty()}
-                {$this->withDatesProperty()}
+                {$this->buildClassDef()}
             };
             EOT;
 
         return eval($classDef);
     }
 
-    private function withTrait()
+    private function buildClassDef()
     {
-        return ($this->includeTrait ? 'use ChrisDiCarlo\EloquentHumanTimestamps\HumanTimestamps;' : '');
+        $def = '';
+
+        if($this->useTrait) {
+            $def .= 'use ChrisDiCarlo\EloquentHumanTimestamps\HumanTimestamps;';
+        }
+
+        if($this->useSoftDeletes) {
+            $def .= 'use Illuminate\Database\Eloquent\SoftDeletes;';
+        }
+
+        if($this->useCastsProperty) {
+            $def .= "protected \$casts = ['published_at' => '{$this->castType}'];";
+        }
+
+        if($this->useDatesProperty) {
+            $def .= 'protected $dates = [\'published_at\'];';
+        }
+
+        return $def;
     }
 
-    private function withCastsProperty()
+    public function withTrait()
     {
-        return ($this->includeCastsProperty ? 'protected $casts = [\'published_at\' => \'datetime\'];' : '');
+        $this->useTrait = true;
+        return $this;
     }
 
-    private function withDatesProperty()
+    public function withSoftDeletes()
     {
-        return ($this->includeDatesProperty ? 'protected $dates = [\'published_at\'];' : '');
+        $this->useSoftDeletes = true;
+        return $this;
+    }
+
+    public function withCastsProperty(string $castType = 'datetime')
+    {
+        $this->castType = $castType;
+        $this->useCastsProperty = true;
+        return $this;
+    }
+
+    public function withDatesProperty()
+    {
+        $this->useDatesProperty = true;
+        return $this;
     }
 }

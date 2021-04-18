@@ -6,24 +6,6 @@ use Illuminate\Support\Str;
 
 trait HumanTimestamps
 {
-    public function getCreatedAtForHumansAttribute()
-    {
-        if ($this->{$this->getCreatedAtColumn()}) {
-            return $this->{$this->getCreatedAtColumn()}->diffForHumans();
-        }
-
-        return null;
-    }
-
-    public function getUpdatedAtForHumansAttribute()
-    {
-        if ($this->{$this->getUpdatedAtColumn()}) {
-            return $this->{$this->getUpdatedAtColumn()}->diffForHumans();
-        }
-
-        return null;
-    }
-
     public function __get($key)
     {
         if(Str::endsWith($key, '_for_humans') &&
