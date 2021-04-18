@@ -52,8 +52,6 @@ class HasHumanTimestampsTest extends TestCase
         $model = (new ModelBuilder)->withTrait()->withCastsProperty('date')->build();
         $model->published_at = $published_at;
 
-        $this->travelBack();
-
         $this->assertNotNull($model->published_at_for_humans);
         $this->assertEquals('5 days ago', $model->published_at_for_humans);
     }
@@ -83,8 +81,6 @@ class HasHumanTimestampsTest extends TestCase
     /** @test */
     public function it_returns_a_human_timestamp_for_the_updated_at_datetime()
     {
-
-
         $created_at = now()->subDays(5);
         $model = (new ModelBuilder)->withTrait()->build();
         $model->created_at = $created_at;
