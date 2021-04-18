@@ -2,7 +2,6 @@
 
 namespace ChrisDiCarlo\EloquentHumanTimestamps\Test;
 
-use Illuminate\Database\Eloquent\Model;
 use ChrisDiCarlo\EloquentHumanTimestamps\Test\TestCase;
 use ChrisDiCarlo\EloquentHumanTimestamps\Test\ModelBuilder;
 
@@ -11,7 +10,8 @@ class HasHumanTimestampsTest extends TestCase
     /** @test */
     public function it_returns_null_if_the_model_does_not_have_the_trait()
     {
-        $model = $this->createClass(false);
+        $model = (new ModelBuilder(false))->build();
+        $model->published_at = now();
         $this->assertNull($model->published_at_for_humans);
     }
 
@@ -21,7 +21,7 @@ class HasHumanTimestampsTest extends TestCase
         $this->travel(-5)->days();
 
         $published_at = now();
-        $model = $this->createClass();
+        $model = (new ModelBuilder())->build();
         $model->published_at = $published_at;
 
         $this->travelBack();
@@ -35,7 +35,7 @@ class HasHumanTimestampsTest extends TestCase
         $this->travel(-5)->days();
 
         $published_at = now();
-        $model = $this->createClass(true, false, true);
+        $model = (new ModelBuilder(true, false, true))->build();
         $model->published_at = $published_at;
 
         $this->travelBack();
@@ -50,7 +50,7 @@ class HasHumanTimestampsTest extends TestCase
         $this->travel(-5)->days();
 
         $published_at = now();
-        $model = $this->createClass(true, true, false);
+        $model = (new ModelBuilder(true, true, false))->build();
         $model->published_at = $published_at;
 
         $this->travelBack();
@@ -65,7 +65,7 @@ class HasHumanTimestampsTest extends TestCase
         $this->travel(-5)->days();
 
         $published_at = now();
-        $model = $this->createClass(true, true, true);
+        $model = (new ModelBuilder(true, true, true))->build();
         $model->published_at = $published_at;
 
         $this->travelBack();
@@ -79,7 +79,7 @@ class HasHumanTimestampsTest extends TestCase
     {
         $this->travel(-5)->days();
         $published_at = now();
-        $model = $this->createClass(true, false, false);
+        $model = (new ModelBuilder(true, false, false))->build();
         $model->published_at = $published_at;
 
         $this->travelBack();
