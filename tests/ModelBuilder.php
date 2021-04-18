@@ -2,14 +2,12 @@
 
 namespace ChrisDiCarlo\EloquentHumanTimestamps\Test;
 
-use Illuminate\Support\Stringable;
-
 class ModelBuilder {
-    private bool $useTrait;
-    private bool $useSoftDeletes;
-    private bool $useCastsProperty;
-    private bool $useDatesProperty;
-    private string $castType;
+    private $useTrait;
+    private $useSoftDeletes;
+    private $useCastsProperty;
+    private $useDatesProperty;
+    private $castType;
 
     public function __construct() {
         $this->useTrait = false;
@@ -66,7 +64,7 @@ class ModelBuilder {
         return $this;
     }
 
-    public function withCastsProperty(string $castType = 'datetime')
+    public function withCastsProperty($castType = 'datetime')
     {
         $this->castType = $castType;
         $this->useCastsProperty = true;
