@@ -6,6 +6,15 @@ This package provides a trait you can add to an Eloquent model that will automat
 ![Laravel 8 Tests](https://github.com/chrisdicarlo/eloquent-human-timestamps/actions/workflows/run-tests-L8.yml/badge.svg)
 ![Laravel 6 & 7 Tests](https://github.com/chrisdicarlo/eloquent-human-timestamps/actions/workflows/run-tests-L7.yml/badge.svg)
 [![Total Downloads](https://img.shields.io/packagist/dt/chrisdicarlo/eloquent-human-timestamps.svg?style=flat-square)](https://packagist.org/packages/chrisdicarlo/eloquent-human-timestamps)
+
+## Version Compatibility
+
+| Laravel | PHP | Package Version |
+| ------- | --- | --------------- |
+| 6.x | 8.0, 7.4, 7.3 | v2.x |
+| 7.x | 8.0, 7.4, 7.3 | v2.x |
+| 8.x | 8.1, 8.0, 7.4, 7.3 | v3.x |
+
 ## Installation
 
 To install the package run:
