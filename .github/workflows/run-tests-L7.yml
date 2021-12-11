@@ -1,4 +1,4 @@
-name: "Run Tests - Laravel 7"
+name: "Run Tests - Older"
 
 on: [push, pull_request]
 
@@ -7,14 +7,14 @@ jobs:
 
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
-        php: [8.1, 8.0, 7.4, 7.3]
+        php: [8.0, 7.4, 7.3]
         laravel: [7.*]
         dependency-version: [prefer-lowest, prefer-stable]
         include:
           - laravel: 7.*
-            testbench: 5.*
+            testbench: 5.20
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }}
 
@@ -37,7 +37,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "symfony/console:>=4.3.4" --no-interaction --no-update
+          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "symfony/console:>=4.3.4" "mockery/mockery:^1.3.2" --no-interaction --no-update
           composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction
 
       - name: Execute tests
