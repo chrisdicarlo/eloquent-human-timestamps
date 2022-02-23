@@ -6,16 +6,17 @@
         {
             "name": "Chris Di Carlo",
             "email": "chris@dicarlosystems.ca",
+            "homepage": "http://dicarlosystems.ca",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^7.3|^8.0|^8.1",
-        "illuminate/support": "^7.0|^8.0"
+        "php": "^8.0",
+        "illuminate/support": "^9.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^5.0|^6.0",
-        "phpunit/phpunit": "^9.0"
+        "orchestra/testbench": "^7.0",
+        "phpunit/phpunit": "^9.5.4"
     },
     "autoload": {
         "psr-4": {
