@@ -14,6 +14,7 @@ This package provides a trait you can add to an Eloquent model that will automat
 | 6.x | 8.0, 7.4, 7.3 | v2.x |
 | 7.x | 8.0, 7.4, 7.3 | v2.x |
 | 8.x | 8.1, 8.0, 7.4, 7.3 | v3.x |
+| 9.x | 8.1, 8.0 | v4.x |
 
 ## Installation
 
