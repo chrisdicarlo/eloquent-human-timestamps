@@ -10,10 +10,11 @@ This package provides a trait you can add to an Eloquent model that will automat
 
 | Laravel | PHP | Package Version |
 | ------- | --- | --------------- |
-| 6.x | 8.0, 7.4, 7.3 | v2.x |
-| 7.x | 8.0, 7.4, 7.3 | v2.x |
-| 8.x | 8.1, 8.0, 7.4, 7.3 | v3.x |
-| 9.x | 8.1, 8.0 | v4.x |
+| 6 | 8.0, 7.4, 7.3 | 2 |
+| 7 | 8.0, 7.4, 7.3 | 2 |
+| 8 | 8.1, 8.0, 7.4, 7.3 | 3 |
+| 9 | 8.1, 8.0 | 4 |
+| 7, 8, 9, 10| 8.1, 8.0, 7.4, 7.3| 5|
 
 ## Installation
 
