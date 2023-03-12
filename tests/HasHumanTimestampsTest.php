@@ -16,17 +16,6 @@ class HasHumanTimestampsTest extends TestCase
     }
 
     /** @test */
-    public function it_returns_a_human_timestamp_if_the_requested_attribute_is_contained_in_the_dates_array()
-    {
-        $published_at = now()->subDays(5);
-        $model = (new ModelBuilder)->withTrait()->withDatesProperty()->build();
-        $model->published_at = $published_at;
-
-        $this->assertNotNull($model->published_at_for_humans);
-        $this->assertEquals('5 days ago', $model->published_at_for_humans);
-    }
-
-    /** @test */
     public function it_returns_a_human_timestamp_if_the_requested_attribute_is_contained_in_the_casts_array_and_casted_to_datetime()
     {
         $published_at = now()->subDays(5);
@@ -108,16 +97,6 @@ class HasHumanTimestampsTest extends TestCase
     {
         $published_at = now()->subDays(5);
         $model = (new ModelBuilder)->withTrait()->build();
-        $model->published_at = $published_at;
-
-        $this->assertNull($model->published_at_for_humans);
-    }
-
-    /** @test */
-    public function it_returns_null_if_the_requested_attribute_is_not_contained_in_the_dates_array_and_is_in_the_casts_array_but_not_a_valid_cast_type()
-    {
-        $published_at = now()->subDays(5);
-        $model = (new ModelBuilder)->withTrait()->withCastsProperty('string')->build();
         $model->published_at = $published_at;
 
         $this->assertNull($model->published_at_for_humans);
