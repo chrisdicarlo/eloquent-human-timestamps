@@ -2,16 +2,6 @@
 
 All notable changes to `eloquent-human-timestamps` will be documented in this file
 
-## 5.0.0 - 2023-03-13
-
-- Laravel 10 support
-- Use v5 for Laravel 10 due to removal of $dates property.
-
-## 4.0.0 - 2022-02-23
-
-- Laravel 9 Support
-- Requires PHP >= 8.0 because of Laravel 9 minimum requirement
-
 ## 3.0.0 - 2021-12-10
 
 - Add support for PHP 8.1
