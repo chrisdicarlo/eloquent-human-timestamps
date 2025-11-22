@@ -1,4 +1,4 @@
-name: "Run Tests - 11"
+name: "Run Tests - 11 & 12"
 
 on: [push, pull_request]
 
@@ -10,11 +10,13 @@ jobs:
       fail-fast: false
       matrix:
         php: [8.2,8.3,8.4]
-        laravel: [11.*]
+        laravel: [11.*, 12.*]
         dependency-version: [prefer-lowest, prefer-stable]
         include:
           - laravel: 11.*
             testbench: 9.*
+          - laravel: 12.*
+            testbench: 10.*
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }}
 
@@ -37,7 +39,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "symfony/console:>=4.3.4" "mockery/mockery:^1.3.2" --no-interaction --no-update
-          composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction
+          composer require "laravel/framework:${{ matrix.laravel }}" "illuminate/support:${{ matrix.laravel }}" "ramsey/uuid:^4.0" "orchestra/testbench:${{ matrix.testbench }}" "symfony/console:>=4.3.4" "mockery/mockery:^1.3.2" --no-interaction --no-update --ignore-platform-reqs
+          composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction --ignore-platform-reqs
       - name: Execute tests
         run: vendor/bin/phpunit

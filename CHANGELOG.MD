@@ -2,10 +2,10 @@
 
 All notable changes to `eloquent-human-timestamps` will be documented in this file
 
-## 7.0.0 - 2025-11-22
+## 6.1.0 - 2025-11-22
 
 - Laravel 12 support
-- Requires PHP >= 8.3
+- Requires PHP >= 8.2
 
 ## 6.0.0 - 2024-03-12
 
